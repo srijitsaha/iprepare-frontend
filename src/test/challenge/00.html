@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html class="dark" lang="en" style="">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>iPrepare - Challenge Invitation</title>
+    <!-- Material Symbols -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-low": "#1c1b1d",
+                        "inverse-primary": "#5d5f5f",
+                        "surface-dim": "#131315",
+                        "on-error-container": "#ffdad6",
+                        "surface-container": "#201f22",
+                        "inverse-on-surface": "#313032",
+                        "primary": "#ffffff",
+                        "secondary": "#c6c6cf",
+                        "on-primary-container": "#636565",
+                        "on-primary-fixed-variant": "#454747",
+                        "error": "#ffb4ab",
+                        "secondary-fixed-dim": "#c6c6cf",
+                        "tertiary": "#ffffff",
+                        "surface-bright": "#39393b",
+                        "tertiary-container": "#e4e1e5",
+                        "outline": "#8e9192",
+                        "error-container": "#93000a",
+                        "on-error": "#690005",
+                        "secondary-container": "#45464e",
+                        "surface": "#131315",
+                        "on-tertiary-container": "#656467",
+                        "tertiary-fixed": "#e4e1e5",
+                        "on-primary": "#2f3131",
+                        "on-primary-fixed": "#1a1c1c",
+                        "surface-container-highest": "#353437",
+                        "surface-container-lowest": "#0e0e10",
+                        "on-tertiary-fixed": "#1b1b1e",
+                        "on-tertiary-fixed-variant": "#47464a",
+                        "on-surface": "#e5e1e4",
+                        "surface-variant": "#353437",
+                        "on-surface-variant": "#c4c7c8",
+                        "inverse-surface": "#e5e1e4",
+                        "primary-container": "#e2e2e2",
+                        "primary-fixed-dim": "#c6c6c7",
+                        "on-secondary-container": "#b4b4bd",
+                        "on-background": "#e5e1e4",
+                        "surface-container-high": "#2a2a2c",
+                        "surface-tint": "#c6c6c7",
+                        "on-secondary-fixed-variant": "#45464e",
+                        "outline-variant": "#444748",
+                        "on-secondary-fixed": "#1a1b22",
+                        "on-secondary": "#2f3037",
+                        "background": "#131315",
+                        "on-tertiary": "#303033",
+                        "tertiary-fixed-dim": "#c8c6c9",
+                        "secondary-fixed": "#e2e1eb",
+                        "primary-fixed": "#e2e2e2"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1400px",
+                        "lg": "24px",
+                        "sm": "8px",
+                        "xl": "32px",
+                        "base": "4px",
+                        "gutter": "16px",
+                        "xs": "4px",
+                        "md": "16px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter", "sans-serif"],
+                        "h1": ["Inter", "sans-serif"],
+                        "code": ["Geist", "monospace"],
+                        "label-md": ["Geist", "sans-serif"],
+                        "h3": ["Inter", "sans-serif"],
+                        "label-sm": ["Geist", "sans-serif"],
+                        "h2": ["Inter", "sans-serif"],
+                        "body-lg": ["Inter", "sans-serif"],
+                        "body-sm": ["Inter", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "h1": ["36px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "code": ["13px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+                        "h3": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "h2": ["30px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Geist:wght@400;500&display=swap');
+
+        .blur-backdrop {
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+    </style>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Geist:wght@400;500&amp;display=swap"
+        data-snapdom="injected-import">
+</head>
+
+<body
+    class="bg-background text-on-background font-body-md min-h-screen overflow-x-hidden selection:bg-surface-container-high selection:text-primary">
+    <!-- TopAppBar -->
+    <!-- <header
+        class="hidden md:flex justify-between items-center h-16 px-lg max-w-container-max mx-auto fixed top-0 w-full z-50 bg-surface dark:bg-surface border-b border-outline-variant transition-all">
+        <div class="flex items-center gap-md">
+            <h1 class="text-h2 font-h1 tracking-tighter text-primary dark:text-primary">iPrepare</h1>
+        </div>
+        <div class="flex items-center gap-md">
+            <button
+                class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-colors scale-95 duration-100">
+                <span class="material-symbols-outlined">notifications</span>
+            </button>
+            <button
+                class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-colors scale-95 duration-100">
+                <span class="material-symbols-outlined">history</span>
+            </button>
+            <div
+                class="w-8 h-8 rounded-full border border-outline-variant overflow-hidden shrink-0 ml-sm cursor-pointer">
+                <img alt="Current user avatar" class="w-full h-full object-cover"
+                    data-alt="A small circular avatar portrait of a student. Minimalist dark mode aesthetic with soft overhead lighting, highly professional and clean."
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmmmNyLylwBdVtcUFD-kE2utqSw1MAa7cF2S820dv7YEhbzsJqbZu40e3nPK_vNgTZugcvNDF6sDmKcjdRZoLwDGjCeQitEwMgIBfka-BRhC3d5rpxUj3f-BraLQv258BjmnGilxgzcD7VQFSvVu_0puNEVdFDO70tg9DcyLT3CwptxVm_6xEjs0pcJ1oulyZDQjBiilulxNMkxBUFA-EyWxvsozFD9mPTu0g9uy5LOpEbSsrpKjIY">
+            </div>
+        </div>
+    </header> -->
+    <!-- SideNavBar (Desktop) -->
+    <!-- BottomNavBar (Mobile) -->
+    <!-- Main Content Area -->
+    <main class="pt-16 md:pt-0 min-h-screen flex items-center justify-center p-md md:p-lg pb-24 md:pb-lg">
+        <!-- Challenge Invitation Card -->
+        <div class="relative z-10 w-full max-w-md bg-[#18181b] border border-[#27272a] rounded-lg shadow-[0_8px_30px_rgb(0,0,0,0.5)] overflow-hidden flex flex-col transform transition-all hover:scale-[1.01] duration-300">
+            <!-- Card Header / Title -->
+            <div
+                class="p-lg text-center border-b border-[#27272a] bg-surface-container-low/50 relative overflow-hidden">
+                <!-- Subtle pattern overlay -->
+                <div
+                    class="absolute inset-0 opacity-[0.03] bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]">
+                </div>
+                <div
+                    class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-surface-container-highest border border-outline-variant mb-sm">
+                    <span class="material-symbols-outlined text-primary text-xl"
+                        style="font-variation-settings: 'FILL' 1;">swords</span>
+                </div>
+                <h2 class="font-h3 text-h3 text-primary mb-xs">Challenge Request</h2>
+                <p class="font-body-sm text-body-sm text-on-surface-variant">An opponent has invited you to a 1v1 match.
+                </p>
+            </div>
+            <!-- Card Body -->
+            <div class="p-lg flex flex-col gap-lg">
+                <!-- Opponent Profile Area -->
+                <div class="flex items-center gap-md p-md rounded-lg bg-surface-dim border border-[#27272a]">
+                    <div class="w-14 h-14 rounded-full border-2 border-[#27272a] overflow-hidden shrink-0 relative">
+                        <img alt="Vikram Singh Avatar" class="w-full h-full object-cover"
+                            data-alt="A striking portrait of a competitive student named Vikram Singh. Dramatic studio lighting with deep shadows and crisp highlights. Shot against a dark, textured gray background. The subject looks determined, lit with cool, desaturated tones matching a modern UI dark theme aesthetic."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6FeL0sCwC-1pGrX8O76WMZ34WNIsOdbRy1RH1iuPKyY5XuNy8TNHkqM86i2bO7pi8td8UMJOmQIKx_8CSuQPPccZputVXHC6i84CMofy_w-gRMd71YpIwTQej3ObrNKjCjSQjBL0WYh2JDAQwaaef-vhL6pycrPOvDAjwQHtcVwzwihZiCwsyKf5o4j90LZ4YA8RgahJWKRnas9hJjh5UhYBePZsecGR7UXoIzWPUH41TYXC_XcVe">
+                        <!-- Online indicator -->
+                        <div
+                            class="absolute bottom-0 right-0 w-3 h-3 bg-emerald-500 rounded-full border-2 border-surface-dim">
+                        </div>
+                    </div>
+                    <div class="flex-grow">
+                        <h3 class="font-label-md text-label-md text-primary font-bold">Vikram Singh</h3>
+                        <div class="flex items-center gap-sm mt-xs">
+                            <span
+                                class="inline-flex items-center px-2 py-0.5 rounded bg-surface-container-high border border-outline-variant/30 font-label-sm text-[10px] text-on-surface-variant uppercase tracking-wider">
+                                Top 2%
+                            </span>
+                            <span class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-xs">
+                                <span class="material-symbols-outlined text-[14px]">military_tech</span> 72% Win Rate
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Match Details -->
+                <div class="grid grid-cols-2 gap-sm">
+                    <div class="col-span-2 p-md rounded border border-[#27272a] bg-[#09090b]/50">
+                        <p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-xs">
+                            Subject</p>
+                        <p class="font-body-md text-body-md text-primary">Mathematics - Integration</p>
+                    </div>
+                    <div class="p-md rounded border border-[#27272a] bg-[#09090b]/50">
+                        <p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-xs">
+                            Exam</p>
+                        <p class="font-body-sm text-body-sm text-primary">JEE Advanced</p>
+                    </div>
+                    <div class="p-md rounded border border-[#27272a] bg-[#09090b]/50">
+                        <p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-xs">
+                            Format</p>
+                        <p class="font-body-sm text-body-sm text-primary">15 Qs / 20 Min</p>
+                    </div>
+                </div>
+                <!-- Motivational Quote -->
+                <div class="text-center pt-sm">
+                    <p class="font-body-sm text-body-sm italic text-on-surface-variant/70">"Your only limit is you."</p>
+                </div>
+            </div>
+            <!-- Card Actions -->
+            <div class="px-lg pb-md flex items-center justify-between animate-pulse">
+                <div class="flex items-center gap-sm">
+                    <span class="relative flex h-3 w-3">
+                        <span
+                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+                    </span>
+                    <span class="font-label-md text-label-md text-on-surface-variant">Waiting for Opponent...</span>
+                </div>
+                <div class="text-on-surface-variant/70 font-label-sm text-label-sm">00:45</div>
+            </div>
+            <div class="p-lg pt-0 flex flex-col gap-sm">
+                <button
+                    class="w-full h-12 rounded flex items-center justify-center gap-sm bg-primary text-[#09090b] font-label-md text-label-md font-bold hover:bg-surface-tint transition-all duration-150 active:scale-[0.98]">
+                    <span class="material-symbols-outlined text-[18px]">check</span>
+                    Accept Challenge
+                </button>
+                <button
+                    class="w-full h-12 rounded flex items-center justify-center gap-sm bg-transparent border border-[#27272a] text-on-surface font-label-md text-label-md hover:bg-surface-container-high transition-all duration-150 active:scale-[0.98]">
+                    Decline
+                </button>
+            </div>
+            <!-- Progress bar indicating time to accept (decorative) -->
+            <div class="h-1 w-full bg-surface-container-high">
+                <div class="h-full bg-primary w-full origin-left animate-[shrink_30s_linear_forwards]"></div>
+            </div>
+        </div>
+    </main>
+
+    <style>
+        @keyframes shrink {
+            from {
+                transform: scaleX(1);
+            }
+
+            to {
+                transform: scaleX(0);
+            }
+        }
+    </style>
+
+
+</body>
+
+</html>

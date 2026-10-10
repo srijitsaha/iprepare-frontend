@@ -1,0 +1,114 @@
+{
+    "question": [
+        {
+            "question": "Which of the following fundamental forces is responsible for the stability of atomic nuclei?",
+            "options": [
+                "Gravitational force",
+                "Electromagnetic force",
+                "Strong nuclear force",
+                "Weak nuclear force"
+            ],
+            "correct": "Strong nuclear force",
+            "explaination": "The strong nuclear force is the strongest of the four fundamental forces. It acts between nucleons (protons and neutrons) and is responsible for binding them together in the nucleus, overcoming the electrostatic repulsion between protons."
+        },
+        {
+            "question": "The dimensional formula of Planck's constant (h) is the same as that of:",
+            "options": [
+                "Linear momentum",
+                "Angular momentum",
+                "Force",
+                "Energy"
+            ],
+            "correct": "Angular momentum",
+            "explaination": "Planck's constant (h) = Energy / Frequency. Dimension of Energy = [ML²T⁻²], Dimension of Frequency = [T⁻¹]. So, [h] = [ML²T⁻¹]. Angular Momentum (L) = r × p = [L][MLT⁻¹] = [ML²T⁻¹]. Hence, they share the same dimensional formula."
+        },
+        {
+            "question": "A student measures the length of a rod as 3.50 cm using a vernier caliper. How many significant figures are in this measurement?",
+            "options": [
+                "2",
+                "3",
+                "4",
+                "1"
+            ],
+            "correct": "3",
+            "explaination": "In the measurement 3.50 cm, the trailing zero after the decimal point is significant. All non-zero digits are significant, and zeros between non-zero digits or trailing zeros in a number with a decimal point are significant. Thus, 3, 5, and 0 are all significant figures."
+        },
+        {
+            "question": "Which of the following pairs of physical quantities have the same dimensions?",
+            "options": [
+                "Work and Power",
+                "Momentum and Energy",
+                "Torque and Work",
+                "Stress and Strain"
+            ],
+            "correct": "Torque and Work",
+            "explaination": "Work = Force × Displacement = [MLT⁻²][L] = [ML²T⁻²]. Torque = Force × Perpendicular distance = [MLT⁻²][L] = [ML²T⁻²]. Both have dimensions of energy. Power is Work/Time ([ML²T⁻³]), Momentum is [MLT⁻¹], and Strain is dimensionless."
+        },
+        {
+            "question": "The pitch of a screw gauge is 0.5 mm and the circular scale has 50 divisions. What is the least count of the screw gauge?",
+            "options": [
+                "0.01 mm",
+                "0.001 mm",
+                "0.1 mm",
+                "0.05 mm"
+            ],
+            "correct": "0.01 mm",
+            "explaination": "Least Count (LC) = Pitch / Number of divisions on circular scale. LC = 0.5 mm / 50 = 0.01 mm."
+        },
+        {
+            "question": "The percentage errors in the measurement of mass and speed of a body are 2% and 3% respectively. The maximum percentage error in the calculated kinetic energy (KE = 1/2 mv²) is:",
+            "options": [
+                "5%",
+                "8%",
+                "1%",
+                "6%"
+            ],
+            "correct": "8%",
+            "explaination": "Kinetic Energy K = (1/2)mv². Percentage error in K = % error in m + 2 × (% error in v) = 2% + 2×(3%) = 2% + 6% = 8%."
+        },
+        {
+            "question": "Which of the following statements correctly describes the 'Principle of Homogeneity of Dimensions'?",
+            "options": [
+                "Dimensions of all terms in a physical equation must be different.",
+                "Dimensions of all terms in a physical equation must be the same.",
+                "Only the LHS of an equation must have dimensions.",
+                "Constants like π and 2 have dimensions."
+            ],
+            "correct": "Dimensions of all terms in a physical equation must be the same.",
+            "explaination": "The Principle of Homogeneity states that for a physically correct equation, the dimensions of every term on the Left Hand Side (LHS) must be equal to the dimensions of every term on the Right Hand Side (RHS), and all terms separated by + or - must have identical dimensions. Dimensionless constants (like 1/2, π) are ignored in dimensional analysis."
+        },
+        {
+            "question": "The SI unit of 'Solid Angle' is:",
+            "options": [
+                "Degree",
+                "Radian",
+                "Steradian",
+                "Gradian"
+            ],
+            "correct": "Steradian",
+            "explaination": "Solid angle is the 3D equivalent of a plane angle. The SI unit for plane angle is Radian (rad), and the SI unit for solid angle is Steradian (sr). Both are dimensionless derived units."
+        },
+        {
+            "question": "If the equation for the time period (T) of a simple pendulum is derived dimensionally as T ∝ l^a g^b, where l is length and g is acceleration due to gravity, the values of 'a' and 'b' are:",
+            "options": [
+                "a = 1/2, b = -1/2",
+                "a = -1/2, b = 1/2",
+                "a = 1, b = -1",
+                "a = 1, b = 1"
+            ],
+            "correct": "a = 1/2, b = -1/2",
+            "explaination": "[T] = [L]^a [LT⁻²]^b = [L]^(a+b) [T]^(-2b). Equating powers: For T: 1 = -2b => b = -1/2. For L: 0 = a + b => a = -b = 1/2. Thus T ∝ √(l/g)."
+        },
+        {
+            "question": "Which of the following is NOT a base unit in the SI system?",
+            "options": [
+                "Kilogram",
+                "Ampere",
+                "Coulomb",
+                "Kelvin"
+            ],
+            "correct": "Coulomb",
+            "explaination": "The seven SI base units are: Metre (m), Kilogram (kg), Second (s), Ampere (A), Kelvin (K), Mole (mol), Candela (cd). Coulomb (C) is a derived unit for electric charge (Charge = Current × Time, so C = A·s)."
+        }
+    ]
+}

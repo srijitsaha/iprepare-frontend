@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>iPrepare - Quiz Results</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;family=Geist:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed-variant": "#47464a",
+                        "on-primary": "#2f3131",
+                        "surface-container": "#201f22",
+                        "surface": "#131315",
+                        "primary": "#ffffff",
+                        "secondary-fixed-dim": "#c6c6cf",
+                        "on-tertiary-fixed": "#1b1b1e",
+                        "on-background": "#e5e1e4",
+                        "tertiary-fixed-dim": "#c8c6c9",
+                        "surface-tint": "#c6c6c7",
+                        "error": "#ffb4ab",
+                        "on-error-container": "#ffdad6",
+                        "inverse-on-surface": "#313032",
+                        "on-primary-container": "#636565",
+                        "on-primary-fixed": "#1a1c1c",
+                        "surface-dim": "#131315",
+                        "on-secondary-container": "#b4b4bd",
+                        "surface-container-highest": "#353437",
+                        "on-surface": "#e5e1e4",
+                        "on-tertiary-container": "#656467",
+                        "inverse-primary": "#5d5f5f",
+                        "secondary": "#c6c6cf",
+                        "secondary-container": "#45464e",
+                        "background": "#131315",
+                        "on-error": "#690005",
+                        "on-surface-variant": "#c4c7c8",
+                        "tertiary": "#ffffff",
+                        "surface-container-low": "#1c1b1d",
+                        "surface-variant": "#353437",
+                        "on-tertiary": "#303033",
+                        "primary-container": "#e2e2e2",
+                        "inverse-surface": "#e5e1e4",
+                        "primary-fixed-dim": "#c6c6c7",
+                        "on-secondary-fixed": "#1a1b22",
+                        "primary-fixed": "#e2e2e2",
+                        "outline": "#8e9192",
+                        "on-secondary": "#2f3037",
+                        "error-container": "#93000a",
+                        "surface-container-lowest": "#0e0e10",
+                        "tertiary-container": "#e4e1e5",
+                        "surface-bright": "#39393b",
+                        "outline-variant": "#444748",
+                        "on-secondary-fixed-variant": "#45464e",
+                        "secondary-fixed": "#e2e1eb",
+                        "surface-container-high": "#2a2a2c",
+                        "on-primary-fixed-variant": "#454747",
+                        "tertiary-fixed": "#e4e1e5",
+                        "success-gold": "#FFD700",
+                        "electric-amber": "#FFBF00"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        .animate-subtle-float {
+            animation: subtle-float 8s ease-in-out infinite;
+        }
+        @keyframes subtle-float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-['Inter'] selection:bg-primary selection:text-surface overflow-x-hidden">
+<div class="relative flex min-h-screen w-full flex-col">
+<!-- Minimal Back Header -->
+<header class="flex items-center px-6 py-4 lg:px-10">
+<button class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors" onclick="window.history.back()">
+<span class="material-symbols-outlined">arrow_back</span>
+<span class="text-sm font-medium">Exit Review</span>
+</button>
+</header>
+<main class="flex-1 w-full max-w-5xl mx-auto px-6 pb-20 flex flex-col gap-6">
+<!-- Hero Section (Neutral/Average Performance) -->
+<section class="relative overflow-hidden rounded-xl bg-surface-container-high border border-outline-variant/30 flex flex-col items-center justify-center p-12 text-center lg:p-16">
+<!-- Background Decoration (Subtle Grain/No Confetti) -->
+<div class="absolute inset-0 opacity-5 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
+<div class="relative z-20 flex flex-col items-center">
+<div class="mb-6 inline-flex p-4 rounded-full bg-surface-container-highest border border-outline-variant animate-subtle-float">
+<span class="material-symbols-outlined text-primary-fixed-dim !text-6xl">analytics</span>
+</div>
+<h1 class="text-primary text-5xl lg:text-7xl font-black tracking-tight mb-2">Results Are In</h1>
+<p class="text-on-surface-variant text-lg lg:text-2xl font-medium uppercase tracking-[0.2em]">Good effort, keep pushing</p>
+<div class="mt-10 flex flex-col items-center">
+<span class="text-on-surface-variant text-sm font-medium mb-2 uppercase tracking-tighter">Your Score</span>
+<div class="text-primary text-7xl lg:text-8xl font-black leading-none flex items-baseline">
+                            12<span class="text-on-surface-variant text-4xl lg:text-5xl font-medium">/20</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Stats Grid -->
+<section class="grid grid-cols-2 lg:grid-cols-4 gap-4"><div class="bg-surface-container-low border border-outline-variant/20 rounded-lg p-4 flex flex-col gap-1"><span class="text-on-surface-variant text-[10px] font-bold uppercase tracking-wider">Accuracy</span><span class="text-primary text-xl font-bold">60%</span></div><div class="bg-surface-container-low border border-outline-variant/20 rounded-lg p-4 flex flex-col gap-1"><span class="text-on-surface-variant text-[10px] font-bold uppercase tracking-wider">Exam Board</span><span class="text-primary text-xl font-bold">JEE Main</span></div><div class="bg-surface-container-low border border-outline-variant/20 rounded-lg p-4 flex flex-col gap-1"><span class="text-on-surface-variant text-[10px] font-bold uppercase tracking-wider">Subject</span><span class="text-primary text-xl font-bold">Physics</span></div><div class="bg-surface-container-low border border-outline-variant/20 rounded-lg p-4 flex flex-col gap-1"><span class="text-on-surface-variant text-[10px] font-bold uppercase tracking-wider">Time Taken</span><span class="text-primary text-xl font-bold">18:45 <span class="text-xs font-normal text-on-surface-variant">min</span></span></div></section>
+<!-- Breakdown Section -->
+<section class="grid lg:grid-cols-3 gap-8">
+<!-- Accuracy Breakdown -->
+<div class="lg:col-span-2 bg-surface-container-low rounded-lg p-6 border border-outline-variant/20"><div class="flex items-center justify-between mb-4"><h3 class="text-primary text-lg font-bold">Performance Summary</h3><span class="text-on-surface-variant text-xs font-medium">Topic: Thermodynamics</span></div><div class="space-y-4"><div class="space-y-1"><div class="flex justify-between text-xs"><span class="text-on-surface">Concept Mastery</span><span class="text-on-surface font-bold">65%</span></div><div class="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden"><div class="h-full bg-primary opacity-60 rounded-full" style="width: 65%"></div></div></div><div class="space-y-1"><div class="flex justify-between text-xs"><span class="text-on-surface">Speed</span><span class="text-on-surface font-bold">58%</span></div><div class="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden"><div class="h-full bg-primary opacity-40 rounded-full" style="width: 58%"></div></div></div><div class="space-y-1"><div class="flex justify-between text-xs"><span class="text-on-surface">Problem Solving</span><span class="text-on-surface font-bold">62%</span></div><div class="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden"><div class="h-full bg-primary opacity-40 rounded-full" style="width: 62%"></div></div></div></div><div class="mt-6 p-4 rounded-lg bg-surface-container-high/50 border border-outline-variant/20 flex items-start gap-3"><div class="p-1.5 rounded-full bg-on-primary-container/20"><span class="material-symbols-outlined text-primary-fixed !text-lg">lightbulb</span></div><div class="flex-1"><h4 class="text-primary text-xs font-bold mb-0.5">Study Insight</h4><p class="text-on-surface-variant text-xs leading-relaxed">You're showing promise in basic laws, but struggled with numerical applications of the Carnot Cycle. Focus on practicing multi-step calculations to improve your accuracy above 80%.</p></div></div></div>
+<!-- Action Cards -->
+<div class="flex flex-col gap-4">
+<!-- Progress Card (Neutral Style) -->
+<div class="bg-surface-container-low p-6 border border-outline-variant/10 text-center flex flex-col items-center rounded-lg">
+<div class="relative size-32 mb-4">
+<svg class="size-full" viewbox="0 0 100 100">
+<circle class="text-surface-container-highest stroke-current" cx="50" cy="50" fill="transparent" r="42" stroke-width="8"></circle>
+<circle class="text-primary opacity-40 stroke-current" cx="50" cy="50" fill="transparent" r="42" stroke-dasharray="264" stroke-dashoffset="105.6" stroke-linecap="round" stroke-width="8" transform="rotate(-90 50 50)"></circle>
+</svg>
+<div class="absolute inset-0 flex items-center justify-center flex-col">
+<span class="text-primary text-2xl font-black">60%</span>
+<span class="text-on-surface-variant text-[10px] uppercase font-bold">Rank 452/1.2k</span>
+</div>
+</div>
+<p class="text-on-surface text-sm font-medium">Mid-tier performance this session</p>
+</div>
+<button class="w-full bg-surface-container-high hover:bg-surface-variant border border-outline-variant/30 text-primary py-4 rounded-xl flex items-center justify-center gap-3 transition-all">
+<span class="material-symbols-outlined" data-icon="share">share</span>
+<span class="font-bold">Share My Results</span>
+</button>
+<button class="w-full bg-error-container hover:bg-error-container/80 text-on-error-container py-4 rounded-xl flex items-center justify-center gap-3 transition-all">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+<span class="font-bold text-sm">Review Incorrect Answers (8)</span>
+</button>
+</div>
+</section>
+<!-- Bottom Actions -->
+<footer class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-10">
+<button class="w-full sm:w-auto min-w-[200px] bg-primary text-on-primary hover:bg-opacity-90 py-4 px-8 rounded-full font-black tracking-tight flex items-center justify-center gap-2 shadow-xl shadow-primary/10">
+<span class="material-symbols-outlined">dashboard</span>
+                    Return to Dashboard
+                </button>
+<button class="w-full sm:w-auto min-w-[200px] bg-transparent border border-outline text-primary hover:bg-surface-variant py-4 px-8 rounded-full font-bold flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">refresh</span>
+                    Retake Quiz
+                </button>
+</footer>
+<!-- Next Steps -->
+<div class="flex flex-col gap-6 mt-10">
+<h3 class="text-on-surface-variant text-sm font-bold uppercase tracking-[0.2em] px-2">Recommended for you</h3>
+<div class="grid md:grid-cols-2 gap-6">
+<div class="group cursor-pointer bg-surface-container-lowest border border-outline-variant/10 rounded-xl p-4 flex gap-4 items-center transition-all hover:bg-surface-container-low">
+<div class="size-16 rounded-lg bg-cover bg-center" data-alt="A cinematic 3D render of a futuristic physics laboratory with glowing plasma tubes and advanced scientific equipment, high-contrast lighting with gold and dark charcoal accents, sleek modern aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB-kIsTvFWWDiynXswDBSE9U-9ExEbCZ8666Q05QV0qtZ6hz12M7waOPLtxgmMmsdxJ4vii5168NTBSZFKS9BpZhQ2mkbs1zqawnAklxW7Hkv-32lEVzGww1KtfHeUg_LjBevvyzW_8edXuGl-OQRKrpdQjneM2BzAuAmE2mDKogpNk_btzg-ofCKsrI-5S23PtiPey1toGR8_oc76-UH0xe4Q6gHJLeWlSd8M4hWeedBZ5r8EZgjncZE6Q7XFuaqf0mdeSi_v3xxA')"></div>
+<div>
+<h4 class="text-primary font-bold">Thermodynamics Refresher</h4>
+<p class="text-on-surface-variant text-xs">Recommended Review • 20 Questions</p>
+</div>
+<span class="material-symbols-outlined ml-auto opacity-0 group-hover:opacity-100 transition-opacity">chevron_right</span>
+</div>
+<div class="group cursor-pointer bg-surface-container-lowest border border-outline-variant/10 rounded-xl p-4 flex gap-4 items-center transition-all hover:bg-surface-container-low">
+<div class="size-16 rounded-lg bg-cover bg-center" data-alt="An abstract visualization of digital learning data, showing glowing network nodes and connecting lines in amber and white, floating in a deep black digital void, high-end educational technology concept." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBL3cbh2bNEAWsoJ3djvl1XchrkaNzyTE0TWctjT2URO7eJKTU31VUoSYUK7sQqNAKbj6z5ZxBQeb8Vgg1tFeXivkzXKrJeV1NaaU2jHM03dnz8K9qvD7jOvMOcRbl9_yf9W1bNcRzaPhE4_IxSKz7NUTK9fQB6EXRod_LfO8r4pG7K6-T0rAL7nd-MIK4M-MhhJvtH3JLoJ3kR5Lt2mIkv-tvw2XUWFMUzQ-klywP_aDyw8Zfr8xuLNhBe-SzreORNCK-nNU5LyJA')"></div>
+<div>
+<h4 class="text-primary font-bold">Problem Solving Strategy</h4>
+<p class="text-on-surface-variant text-xs">Video Tutorial • 8 mins</p>
+</div>
+<span class="material-symbols-outlined ml-auto opacity-0 group-hover:opacity-100 transition-opacity">play_circle</span>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>
