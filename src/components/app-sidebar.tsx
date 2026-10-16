@@ -13,7 +13,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
-import { LayoutDashboardIcon, ChartBarIcon, Settings2Icon, SearchIcon, CommandIcon, BookAlert, BookmarkIcon, SwordsIcon } from "lucide-react"
+import { LayoutDashboardIcon, ChartBarIcon, Settings2Icon, SearchIcon, BookAlert, BookmarkIcon, SwordsIcon } from "lucide-react"
 import { getUserInfoAPI } from "@/API/user.API"
 import { Navigate } from "react-router-dom"
 
@@ -99,8 +99,9 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         <SidebarMenu>
           <SidebarMenuItem>
             <SidebarMenuButton asChild className="data-[slot=sidebar-menu-button]:p-1.5!">
-              <a href="#">
-                <CommandIcon className="size-5!" />
+              <a href="/">
+                {/* <CommandIcon className="size-5!" /> */}
+                <img src="logo/favicons/favicon-32x32.png" alt="iPrepare logo image" />
                 <span className="text-base font-semibold">iPrepare</span>
               </a>
             </SidebarMenuButton>
