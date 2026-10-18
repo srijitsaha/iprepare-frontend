@@ -15,8 +15,8 @@ export const Footer = () => {
             </p>
           </div>
           <div className="flex flex-col md:items-end justify-start space-y-4">
-            <a className="text-sm hover:text-primary transition-colors" href="#">Privacy Policy</a>
-            <a className="text-sm hover:text-primary transition-colors" href="#">Terms of Service</a>
+            <a className="text-sm hover:text-primary transition-colors" href="formals/PrivacyPolicy.html">Privacy Policy</a>
+            <a className="text-sm hover:text-primary transition-colors" href="formals/TermsOfServices.html">Terms of Service</a>
             <a className="text-sm hover:text-primary transition-colors" href="#">Contact Support</a>
             <a className="text-sm hover:text-primary transition-colors" href="#">Test Series</a>
           </div>

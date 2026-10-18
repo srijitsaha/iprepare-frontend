@@ -22,6 +22,8 @@ import { ChallengeResultView } from './pages/challengemode/ChallengeResult'
 import { Challenges } from './pages/dashboard/Challenges'
 import { VerifyOTPForRegister } from './pages/verifyOTP/VerifyOTPForRegister'
 import { ForgotPassword } from './pages/verifyOTP/ForgotPassword'
+import { TermsOfService } from './pages/formals/TermsOfServices'
+import { PrivacyPolicy } from './pages/formals/PrivacyPolicy'
 
 export function App() {
   const router = createBrowserRouter([
@@ -44,6 +46,9 @@ export function App() {
         { path: "/challenge-mode/invite-friend/:challengeId", element: <InviteFriend /> }, 
         { path: "/challenge-mode/start-challenge/:challengeId", element: <MainChallengePage /> }, 
         { path: "/challenge-mode/challenge-result/:challengeId", element: <ChallengeResultView /> }, 
+
+        { path: "/terms-of-service", element: <TermsOfService /> }, 
+        { path: "/privacy-policy", element: <PrivacyPolicy /> }, 
       ]
     },
     {
