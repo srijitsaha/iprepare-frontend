@@ -35,8 +35,8 @@ try {
 
 const data = {
   user: {
-    name: userDetails.firstName + " " + userDetails.lastName, 
-    email: userDetails.email, 
+    name: userDetails.firstName + " " + userDetails.lastName,
+    email: userDetails.email,
     avatar: userDetails.avatar || "/avatars/shadcn.jpg",
     isNotSignedIn: userDetails.isNotSignedIn
   },
@@ -44,51 +44,51 @@ const data = {
     {
       title: "Dashboard",
       url: "/dashboard",
-      icon: ( <LayoutDashboardIcon /> ),
+      icon: (<LayoutDashboardIcon />),
     },
     {
       title: "Analytics",
       url: "/dashboard/analytics",
-      icon: ( <ChartBarIcon /> ),
+      icon: (<ChartBarIcon />),
     },
     {
       title: "Mistakes Notebook",
       url: "/dashboard/mistakes-notebook",
-      icon: ( <BookAlert /> ),
+      icon: (<BookAlert />),
     },
     {
       title: "All Exams",
       url: "/dashboard/all-exams",
-      icon: ( <BookAlert /> ),
+      icon: (<BookAlert />),
     },
     {
       title: "Bookmarked Questions",
       url: "/dashboard/bookmarked-questions",
-      icon: ( <BookmarkIcon /> ),
+      icon: (<BookmarkIcon />),
     },
     {
       title: "Challenges",
       url: "/dashboard/challenges",
-      icon: ( <SwordsIcon /> ),
+      icon: (<SwordsIcon />),
     },
-  ], 
+  ],
   navSecondary: [
     {
       title: "Settings",
       url: "/dashboard/settings",
-      icon: ( <Settings2Icon /> ),
+      icon: (<Settings2Icon />),
     },
     {
       title: "Search",
       url: "",
-      icon: ( <SearchIcon /> ),
+      icon: (<SearchIcon />),
     },
   ]
 }
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
 
-  if(data.user.isNotSignedIn) {
+  if (data.user.isNotSignedIn) {
     return <Navigate to="/sign-in" replace />
   }
 
@@ -99,9 +99,11 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         <SidebarMenu>
           <SidebarMenuItem>
             <SidebarMenuButton asChild className="data-[slot=sidebar-menu-button]:p-1.5!">
-              <a href="/">
+              <a href="/" className="text-xl font-bold tracking-tight text-primary flex gap-2 items-center">
                 {/* <CommandIcon className="size-5!" /> */}
-                <img src="favicons/favicon-32x32.png" alt="iPrepare logo image" />
+                <div className="h-8 w-8 flex items-center justify-center rounded bg-white text-white">
+                  <img src="/Icon Without Logo.png" alt="iPrepare Logo" className='h-6 w-6 object-contain' />
+                </div>
                 <span className="text-base font-semibold">iPrepare</span>
               </a>
             </SidebarMenuButton>
