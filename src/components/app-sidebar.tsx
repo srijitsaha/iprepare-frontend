@@ -101,7 +101,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             <SidebarMenuButton asChild className="data-[slot=sidebar-menu-button]:p-1.5!">
               <a href="/">
                 {/* <CommandIcon className="size-5!" /> */}
-                <img src="logo/favicons/favicon-32x32.png" alt="iPrepare logo image" />
+                <img src="favicons/favicon-32x32.png" alt="iPrepare logo image" />
                 <span className="text-base font-semibold">iPrepare</span>
               </a>
             </SidebarMenuButton>

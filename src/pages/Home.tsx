@@ -21,7 +21,7 @@ export const Home: React.FC = () => {
                             <img
                                 alt="Student studying"
                                 className="w-full h-full object-cover opacity-20 dark:opacity-30"
-                                src="60272784626.png"
+                                src="assets/StudentIsStudyingWithUncertainity.png"
                             />
                             <div className="absolute inset-0 bg-linear-to-r from-background via-background/20 to-transparent"></div>
                         </div>
