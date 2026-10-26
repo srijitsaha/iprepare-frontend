@@ -282,7 +282,20 @@ export const programmingLanguagesTopic: any = {
             'Text, Annotations & Labels',
             'Working with Data'
         ],
-
+        "Seaborn Module": [
+            'Categorical Plots',
+            'Color Palettes',
+            'Customization & Advanced Control',
+            'Distribution Plots',
+            'Introduction & Fundamentals',
+            'Matrix Plots',
+            'Multi-Plot Grids',
+            'Objects Interface (Modern and Advanced API - Optional but Fundamental for Completeness)',
+            'Regression Plots',
+            'Relational Plots',
+            'Statistical Estimation & Error Bars',
+            'Themes, Styles & Aesthetics'
+        ]
     }
 }
 
