@@ -47,7 +47,7 @@ export const programmingLanguagesData: any = {
     "HTML": ["Core Concepts"],
     "CSS": ["Core Concepts", "Bootstrap", "Tailwind CSS"],
     "JavaScript": ["Core Concepts", "ReactJS", "NodeJS", "AngularJS", "Vue"],
-    "Python": ["Core Concepts", "In-built Modules"],
+    "Python": ["Core Concepts", "In-built Modules", "Matplotlib Module", "NumPy Module", "Pandas Module", "Seaborn Module"],
     "Kotlin": ["Core Concepts"],
     "C": ["Core Concepts"],
     "C++": ["Core Concepts"]
@@ -230,7 +230,59 @@ export const programmingLanguagesTopic: any = {
             'GUI based module - Tkinter',
             'Network communication and internet protocols based modules',
             'OS management and file system based modules'
-        ]
+        ],
+        "Pandas Module": [
+            'Combining Data',
+            'Data Types & Missing Data',
+            'DataFrame',
+            'Essential Operations',
+            'GroupBy & Aggregation',
+            'Indexing, Selection & Filtering',
+            'Input & Output',
+            'Introduction & Basics',
+            'MultiIndex & Hierarchical Data',
+            'Performance & Best Practices (Fundamentals)',
+            'Reshaping & Pivoting',
+            'Series',
+            'Time Series Basics',
+            'Visualization (Pandas Built-in)'
+        ],
+        "NumPy Module": [
+            'Advanced but Still Core Topics (often tested)',
+            'Aggregation & Statistical Operations',
+            'Array Attributes & Inspection',
+            'Array Creation',
+            'Array Manipulation & Shape Operations',
+            'Copies, Views & Memory',
+            'Indexing & Slicing',
+            'Input & Output',
+            'Linear Algebra Basics',
+            'Random Number Generation',
+            'Sorting, Searching & Counting',
+            'The ndarray Object',
+            'Universal Functions (ufuncs) & Element-wise Math',
+            'Vectorization & Broadcasting'
+        ],
+        "Matplotlib Module": [
+            '3D Plotting (mplot3d)',
+            'Advanced Customization & Best Practices',
+            'Animations (Fundamentals)',
+            'Axes Limits, Scales & Ticks',
+            'Basic Plot Types',
+            'Colors, Colormaps & Styling',
+            'Core Architecture (Object Hierarchy)',
+            'Creating Figures and Axes',
+            'Images & Array Visualization',
+            'Interfaces (Coding Styles)',
+            'Intermediate Plot Types',
+            'Introduction & Setup',
+            'Plot Customization Basics',
+            'Saving & Exporting Figures',
+            'Subplots & Multi-Panel Layouts',
+            'Text, Annotations & Labels',
+            'Working with Data'
+        ],
+
     }
 }
 
