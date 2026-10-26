@@ -10,6 +10,7 @@ import { Switch } from "@/components/ui/switch"
 import { sendOTPToUserForRegisterAPI } from "@/API/user.API"
 import { useDispatch } from "react-redux"
 import { setRegisterFormDetails } from "@/stores/RegisterStore"
+import { Spinner } from "./ui/spinner"
 
 export function SignupForm({
   className,
@@ -24,6 +25,7 @@ export function SignupForm({
 
   const [registerFormData, setRegisterFormData] = useState({ firstName: "", lastName: "", email: "", password: "", confirmPassword: "" })
   const [showPassword, setShowPassword] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false)
 
 
   const handleFormInputChange = (e: any) => setRegisterFormData({ ...registerFormData, [e.target.name]: e.target.value })
@@ -31,7 +33,7 @@ export function SignupForm({
   const handleFormSubmit = async (e: SyntheticEvent) => {
     e.preventDefault()
     dispatch(setRegisterFormDetails({ ...registerFormData }))
-    
+    setIsSubmitting(true)
 
     try {
       const data = await sendOTPToUserForRegisterAPI(registerFormData)
@@ -46,6 +48,8 @@ export function SignupForm({
       toast.error(error.response.data.message, {
         position: 'top-right'
       })
+    } finally {
+      setIsSubmitting(false)
     }
   }
 
@@ -102,7 +106,7 @@ export function SignupForm({
               </Field>
 
               <Field>
-                <Button type="submit">Create Account</Button>
+                <Button type="submit" disabled={isSubmitting}> {isSubmitting || 'Create Account'} {isSubmitting && <> <Spinner /> Sending OTP... </>}   </Button>
                 <FieldDescription className="text-center">
                   Already have an account? <NavLink to={"/sign-in"}>Sign in</NavLink>
                 </FieldDescription>
