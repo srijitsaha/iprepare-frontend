@@ -47,7 +47,7 @@ export const programmingLanguagesData: any = {
     "HTML": ["Core Concepts"],
     "CSS": ["Core Concepts", "Bootstrap", "Tailwind CSS"],
     "JavaScript": ["Core Concepts", "ReactJS", "NodeJS", "AngularJS", "Vue"],
-    "Python": ["Core Concepts", "In-built Modules", "Matplotlib Module", "NumPy Module", "Pandas Module", "Seaborn Module"],
+    "Python": ["Core Concepts", "In-built Modules", "Matplotlib Module", "NumPy Module", "Pandas Module", "Seaborn Module", "Polars Module"],
     "Kotlin": ["Core Concepts"],
     "C": ["Core Concepts"],
     "C++": ["Core Concepts"]
@@ -295,6 +295,23 @@ export const programmingLanguagesTopic: any = {
             'Relational Plots',
             'Statistical Estimation & Error Bars',
             'Themes, Styles & Aesthetics'
+        ],
+        "Polars Module": [
+            'Advanced and Performance Topics',
+            'Basic Operations on Expressions',
+            'Column & Row Operations',
+            'Combining DataFrames',
+            'Data Structures',
+            'Data Types',
+            'Eager vs Lazy Evaluation',
+            'Expressions & Contexts (Core of the API)',
+            'GroupBy & Aggregations',
+            'Input and Output',
+            'Introduction & Core Concepts',
+            'Missing Data & Cleaning',
+            'Reshaping & Restructuring',
+            'Window Functions',
+            'Working with Specific Data Types'
         ]
     }
 }
