@@ -38,6 +38,14 @@ export const ReviewQuestions: React.FC = () => {
     return ""
   }
 
+
+  const getOptionClassNameUserNotAnswered = (option: string, index: number) => {
+    if(option === reviewQuestions[index].answer) {
+      return "data-checked:border-primary data-checked:bg-primary data-checked:text-primary-foreground dark:data-checked:bg-primary"
+    }
+    return ""
+  }
+
   const handleToggleBookmark = async (index: number) => {
     try {
       const response = await toggleQuestionBookmarkAPI({ questionId: reviewQuestions[index]._id })
@@ -79,8 +87,8 @@ export const ReviewQuestions: React.FC = () => {
                   
                   <Bookmark color='#ffff00' fill={curElem.bookmarked ? '#ffff00': 'none'} className='absolute top-3 right-3' onClick={() => handleToggleBookmark(index)} />
 
-                  <RadioGroup className="w-full p-2" value={curElem.userAnswered} disabled={true}>
-                    <FieldLabel htmlFor={curElem.options[0]} className={getOptionClassName(curElem.options[0], index)}>
+                  <RadioGroup className="w-full p-2" value={curElem.userAnswered == null ? curElem.answer : curElem.userAnswered} disabled={true}>
+                    <FieldLabel htmlFor={curElem.options[0]} className={curElem.userAnswered == null ? getOptionClassNameUserNotAnswered(curElem.options[0], index) : getOptionClassName(curElem.options[0], index)}>
                       <Field orientation="horizontal">
                         <FieldContent>
                           <FieldTitle> {curElem.options[0]} </FieldTitle>
@@ -88,7 +96,7 @@ export const ReviewQuestions: React.FC = () => {
                         <RadioGroupItem value={curElem.options[0]} id={curElem.options[0]} />
                       </Field>
                     </FieldLabel>
-                    <FieldLabel htmlFor={curElem.options[1]} className={getOptionClassName(curElem.options[1], index)}>
+                    <FieldLabel htmlFor={curElem.options[1]} className={curElem.userAnswered == null ? getOptionClassNameUserNotAnswered(curElem.options[1], index) : getOptionClassName(curElem.options[1], index)}>
                       <Field orientation="horizontal">
                         <FieldContent>
                           <FieldTitle> {curElem.options[1]} </FieldTitle>
@@ -96,7 +104,7 @@ export const ReviewQuestions: React.FC = () => {
                         <RadioGroupItem value={curElem.options[1]} id={curElem.options[1]} />
                       </Field>
                     </FieldLabel>
-                    <FieldLabel htmlFor={curElem.options[2]} className={getOptionClassName(curElem.options[2], index)}>
+                    <FieldLabel htmlFor={curElem.options[2]} className={curElem.userAnswered == null ? getOptionClassNameUserNotAnswered(curElem.options[2], index) : getOptionClassName(curElem.options[2], index)}>
                       <Field orientation="horizontal">
                         <FieldContent>
                           <FieldTitle>{curElem.options[2]}</FieldTitle>
@@ -104,7 +112,7 @@ export const ReviewQuestions: React.FC = () => {
                         <RadioGroupItem value={curElem.options[2]} id={curElem.options[2]} />
                       </Field>
                     </FieldLabel>
-                    <FieldLabel htmlFor={curElem.options[3]} className={getOptionClassName(curElem.options[3], index)}>
+                    <FieldLabel htmlFor={curElem.options[3]} className={curElem.userAnswered == null ? getOptionClassNameUserNotAnswered(curElem.options[3], index) : getOptionClassName(curElem.options[3], index)}>
                       <Field orientation="horizontal">
                         <FieldContent>
                           <FieldTitle>{curElem.options[3]}</FieldTitle>
@@ -240,9 +248,9 @@ export const ReviewQuestions: React.FC = () => {
                 <Card className='px-3' key={curElem._id}>
                   <h4 className="text-left text-2xl font-semibold tracking-tight"> {indexes + 1}. {curElem.question} </h4>
 
-                  <RadioGroup className="w-full p-2" value={curElem.userAnswered} disabled={true}>
+                  <RadioGroup className="w-full p-2" value={curElem.answer} disabled={true}>
 
-                    <FieldLabel htmlFor={curElem.options[0]} className={getOptionClassName(curElem.options[0], indexes)}>
+                    <FieldLabel htmlFor={curElem.options[0]} className={curElem.userAnswered == null ? getOptionClassNameUserNotAnswered(curElem.options[0], indexes) : getOptionClassName(curElem.options[0], indexes)}>
                       <Field orientation="horizontal">
                         <FieldContent>
                           <FieldTitle> {curElem.options[0]} </FieldTitle>
@@ -251,7 +259,7 @@ export const ReviewQuestions: React.FC = () => {
                       </Field>
                     </FieldLabel>
 
-                    <FieldLabel htmlFor={curElem.options[1]} className={getOptionClassName(curElem.options[1], indexes)}>
+                    <FieldLabel htmlFor={curElem.options[1]} className={curElem.userAnswered == null ? getOptionClassNameUserNotAnswered(curElem.options[1], indexes) : getOptionClassName(curElem.options[1], indexes)}>
                       <Field orientation="horizontal">
                         <FieldContent>
                           <FieldTitle> {curElem.options[1]} </FieldTitle>
@@ -260,7 +268,7 @@ export const ReviewQuestions: React.FC = () => {
                       </Field>
                     </FieldLabel>
 
-                    <FieldLabel htmlFor={curElem.options[2]} className={getOptionClassName(curElem.options[2], indexes)}>
+                    <FieldLabel htmlFor={curElem.options[2]} className={curElem.userAnswered == null ? getOptionClassNameUserNotAnswered(curElem.options[2], indexes) : getOptionClassName(curElem.options[2], indexes)}>
                       <Field orientation="horizontal">
                         <FieldContent>
                           <FieldTitle>{curElem.options[2]}</FieldTitle>
@@ -269,7 +277,7 @@ export const ReviewQuestions: React.FC = () => {
                       </Field>
                     </FieldLabel>
 
-                    <FieldLabel htmlFor={curElem.options[3]} className={getOptionClassName(curElem.options[3], indexes)}>
+                    <FieldLabel htmlFor={curElem.options[3]} className={curElem.userAnswered == null ? getOptionClassNameUserNotAnswered(curElem.options[3], indexes) : getOptionClassName(curElem.options[3], indexes)}>
                       <Field orientation="horizontal">
                         <FieldContent>
                           <FieldTitle>{curElem.options[3]}</FieldTitle>
