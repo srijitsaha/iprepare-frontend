@@ -124,7 +124,8 @@ export const ReviewQuestions: React.FC = () => {
 
         <TabsContent value="correct">
           <div className='h-fit w-full flex flex-col rounded-xl border-0 gap-3'>
-            {reviewQuestions && reviewQuestions.filter((currElem: any) => currElem.isUserAnsweredCorrect == true).map((curElem: any, indexes: number) => {
+            {reviewQuestions && reviewQuestions.map((curElem: any, indexes: number) => {
+              if(curElem.isUserAnsweredCorrect == true) 
               return (
                 <Card className='px-3' key={curElem._id}>
                   <h4 className="text-left text-2xl font-semibold tracking-tight"> {indexes + 1}. {curElem.question} </h4>
@@ -178,7 +179,8 @@ export const ReviewQuestions: React.FC = () => {
 
         <TabsContent value="incorrect">
           <div className='h-fit w-full flex flex-col rounded-xl border-0 gap-3'>
-            {reviewQuestions && reviewQuestions.filter((currElem: any) => currElem.isUserAnsweredCorrect == false).map((curElem: any, indexes: number) => {
+            {reviewQuestions && reviewQuestions.map((curElem: any, indexes: number) => {
+              if(curElem.isUserAnsweredCorrect == false )
               return (
                 <Card className='px-3' key={curElem._id}>
                   <h4 className="text-left text-2xl font-semibold tracking-tight"> {indexes + 1}. {curElem.question} </h4>
@@ -232,7 +234,8 @@ export const ReviewQuestions: React.FC = () => {
 
         <TabsContent value="didNotAnswer">
           <div className='h-fit w-full flex flex-col rounded-xl border-0 gap-3'>
-            {reviewQuestions && reviewQuestions.filter((currElem: any) => currElem.isUserAnsweredCorrect == null).map((curElem: any, indexes: number) => {
+            {reviewQuestions && reviewQuestions.map((curElem: any, indexes: number) => {
+              if(curElem.isUserAnsweredCorrect == null) 
               return (
                 <Card className='px-3' key={curElem._id}>
                   <h4 className="text-left text-2xl font-semibold tracking-tight"> {indexes + 1}. {curElem.question} </h4>
