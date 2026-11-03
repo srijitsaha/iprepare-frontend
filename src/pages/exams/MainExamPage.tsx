@@ -55,18 +55,23 @@ export const MainExamPage = () => {
     if(isAnswerLocked) {
       return
     }
-
-    const data = await submitAnswerAPI({ questionId: question._id, examId: params.examId, answer: value })
-    setUserAnswer(value)
-    setQuestion({ ...question, explaination: data.explaination, correct: data.correct, isCorrect: data.isCorrect })
-    if(data.isCorrect) {
-      setScore(score + 1)
-    }
-    setIsAnswerLocked(true)
     
-    if(data.isCompleted) {
-      setIsExamCompleted(true)
-      setExamDetails({ board: data.board, subject: data.subject, topic: data.topic })
+    try {
+      setIsAnswerLocked(true)
+      const data = await submitAnswerAPI({ questionId: question._id, examId: params.examId, answer: value })
+      setUserAnswer(value)
+      setQuestion({ ...question, explaination: data.explaination, correct: data.correct, isCorrect: data.isCorrect })
+      if(data.isCorrect) {
+        setScore(score + 1)
+      }
+      
+      if(data.isCompleted) {
+        setIsExamCompleted(true)
+        setExamDetails({ board: data.board, subject: data.subject, topic: data.topic })
+      }
+    } catch (error) {
+      console.log(error)
+      setIsAnswerLocked(false)
     }
   }
 

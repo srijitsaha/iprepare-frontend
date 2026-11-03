@@ -94,6 +94,7 @@ export const MainChallengePage = () => {
       return
     }
 
+    setIsAnswerLocked(true)
     const data = await submitChallengedQuestionAnswerAPI({ questionId: question._id, examId: examId, answer: value, challengeId: params.challengeId })
     setUserAnswer(value)
     setQuestion({ ...question, explaination: data.explaination, correct: data.correct, isCorrect: data.isCorrect })
@@ -112,7 +113,6 @@ export const MainChallengePage = () => {
 
 
     socketRef.current?.emit('send-answer', { isCorrect: data.isCorrect, currentQuestionIndex, challengeId: params.challengeId })
-    setIsAnswerLocked(true)
 
     
     if(data.isCompleted) {
