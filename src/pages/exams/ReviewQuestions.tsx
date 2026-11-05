@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { Card } from "@/components/ui/card"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { reviewExamAnswersAPI } from '@/API/question.API'
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
@@ -12,6 +12,7 @@ import { toast } from 'sonner'
 
 export const ReviewQuestions: React.FC = () => {
   const [reviewQuestions, setReviewQuestions] = useState<any>(null)
+  const [otherDetails, setOtherDetails] = useState<any>(null)
   const params = useParams()
 
 
@@ -19,6 +20,28 @@ export const ReviewQuestions: React.FC = () => {
     try {
       const data = await reviewExamAnswersAPI({ examId: params.examId })
       setReviewQuestions(data.correctionAnswer)
+
+
+      // Formatting of startedAt timestamps
+      let startedDate: string = new Date(data.startedAt).toLocaleDateString()
+      data.startedAtDate = `${startedDate.replaceAll('/', '-')}`
+
+      let startedTime: any = new Date(data.startedAt)
+      data.startedAtTime = startedTime.toLocaleTimeString().split(':').slice(0, 2).join(':')
+
+
+
+      // Calculating how much time was taken by the user to finish the exam
+      let startedAt: number = Date.parse(data.startedAt)
+      let completedAt: number = Date.parse(data.completedAt)
+
+      let differenceInMilliSeconds: number = Math.round((completedAt - startedAt) / 1000)
+      let minutesDifference: number = Math.floor(differenceInMilliSeconds / 60)
+      let secondsDifference: number = Math.floor(differenceInMilliSeconds % 60)
+
+      data.timeTaken = `${minutesDifference}:${secondsDifference}`
+
+      setOtherDetails(data)
     } catch (error: any) {
       toast.error(error.response.data.message, { position: 'top-right' })
     }
@@ -69,12 +92,45 @@ export const ReviewQuestions: React.FC = () => {
   return (
     <main className='min-h-screen w-full max-w-5xl flex flex-col mx-auto my-4 border border-[#444748]/30 rounded-xl shadow-2xl p-3'>
       <h1 className='text-3xl text-white'> Review Questions </h1>
+
+      <section className='my-2 w-full h-max flex gap-2 flex-wrap'>
+
+
+        <Card className=''>
+          <CardHeader>
+            <CardTitle className='font-bold'> Subject </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p className='text-gray-400 font-normal'> {otherDetails?.board} - {otherDetails?.subject} </p>
+          </CardContent>
+        </Card>
+
+
+        <Card>
+          <CardHeader>
+            <CardTitle className='font-bold'> Topic </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p className='text-gray-400 font-normal'> {otherDetails?.topic} </p>
+          </CardContent>
+        </Card>
+        
+
+        <Card>
+          <CardContent>
+            <p className='text-gray-400 font-normal flex gap-3 items-center'> <b className='text-base leading-snug font-medium text-white'> Started at </b> {otherDetails?.startedAtDate} {otherDetails?.startedAtTime} </p>
+            <p className='text-gray-400 font-normal flex gap-3 items-center'> <b className='text-base leading-snug font-medium text-white'> Time taken </b> {otherDetails?.timeTaken} minutes. </p>
+          </CardContent>
+        </Card>
+
+      </section>
+
       <Tabs defaultValue="all" className="my-3 w-full">
         <TabsList>
           <TabsTrigger value="all">All <Badge variant="default"> {reviewQuestions && reviewQuestions.length} </Badge> </TabsTrigger>
           <TabsTrigger value="correct">Correct <Badge variant="default"> {reviewQuestions && reviewQuestions.filter((currElem: any) => currElem.isUserAnsweredCorrect == true).length} </Badge> </TabsTrigger>
-          <TabsTrigger value="incorrect">Incorrect <Badge variant="destructive"> {reviewQuestions && reviewQuestions.filter((currElem: any) => currElem.isUserAnsweredCorrect == false).length} </Badge> </TabsTrigger>
-          <TabsTrigger value="didNotAnswer"> Did Not Answer <Badge variant="destructive"> {reviewQuestions && reviewQuestions.filter((currElem: any) => currElem.isUserAnsweredCorrect == null).length} </Badge> </TabsTrigger>
+          <TabsTrigger value="incorrect">Wrong <Badge variant="destructive"> {reviewQuestions && reviewQuestions.filter((currElem: any) => currElem.isUserAnsweredCorrect == false).length} </Badge> </TabsTrigger>
+          <TabsTrigger value="didNotAnswer"> Unanswered <Badge variant="destructive"> {reviewQuestions && reviewQuestions.filter((currElem: any) => currElem.isUserAnsweredCorrect == null).length} </Badge> </TabsTrigger>
         </TabsList>
 
 
