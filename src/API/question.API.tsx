@@ -43,3 +43,9 @@ export const reviewExamAnswersAPI = async (data: any) => {
     const response = await questionBaseURL.get(`/review-exam-answers/${data.examId}`, { withCredentials: true })
     return response.data
 }
+
+
+export const askDoubtAboutAQuestionToAIAPI = async (data: any) => {
+    const response = await questionBaseURL.post(`/ask-doubt-for-wrong-answer`, data, { withCredentials: true })
+    return response.data
+}

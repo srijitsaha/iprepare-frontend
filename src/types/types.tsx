@@ -41,3 +41,10 @@ export interface NextStepCard {
 }
 
 export type ActiveTab = 'results' | 'dashboard' | 'review' | 'quiz_player' | 'ai_tutor';
+
+
+export interface AskDoubtProps {
+  examId: string | undefined;
+  selectedWrongQuestionId: string | null;
+  setSelectedWrongQuestionId: any;
+}

@@ -6,14 +6,17 @@ import { reviewExamAnswersAPI } from '@/API/question.API'
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
 import { Field, FieldContent, FieldLabel, FieldTitle } from '@/components/ui/field'
 import { Badge } from '@/components/ui/badge'
-import { Bookmark } from 'lucide-react'
+import { Bookmark, Brain } from 'lucide-react'
 import { toggleQuestionBookmarkAPI } from '@/API/user.API'
 import { toast } from 'sonner'
+import { Button } from '@/components/ui/button'
+import { MessagePattern } from '@/components/Chats/AskDoubtAboutQuestions'
 
 export const ReviewQuestions: React.FC = () => {
   const [reviewQuestions, setReviewQuestions] = useState<any>(null)
   const [otherDetails, setOtherDetails] = useState<any>(null)
   const params = useParams()
+  const [selectedWrongQuestionId, setSelectedWrongQuestionId] = useState<string | null>(null)
 
 
   const handleReviewQuestions = async () => {
@@ -88,40 +91,43 @@ export const ReviewQuestions: React.FC = () => {
     handleReviewQuestions()
   }, [params.examId])
 
+  console.log("Review Questions Rerendered")
 
   return (
     <main className='min-h-screen w-full max-w-5xl flex flex-col mx-auto my-4 border border-[#444748]/30 rounded-xl shadow-2xl p-3'>
-      <h1 className='text-3xl text-white'> Review Questions </h1>
 
-      <section className='my-2 w-full h-max flex gap-2 flex-wrap'>
+      <section className='my-2 w-full h-max flex flex-col gap-2'>
+        <h1 className='text-3xl text-white'> Review Questions </h1>
+        <div className='w-full h-max flex gap-2 flex-wrap'>
+          
+
+          <Card className=''>
+            <CardHeader>
+              <CardTitle className='font-bold'> Subject </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className='text-gray-400 font-normal'> {otherDetails?.board} - {otherDetails?.subject} </p>
+            </CardContent>
+          </Card>
 
 
-        <Card className=''>
-          <CardHeader>
-            <CardTitle className='font-bold'> Subject </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className='text-gray-400 font-normal'> {otherDetails?.board} - {otherDetails?.subject} </p>
-          </CardContent>
-        </Card>
+          <Card>
+            <CardHeader>
+              <CardTitle className='font-bold'> Topic </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className='text-gray-400 font-normal'> {otherDetails?.topic} </p>
+            </CardContent>
+          </Card>
+          
 
-
-        <Card>
-          <CardHeader>
-            <CardTitle className='font-bold'> Topic </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className='text-gray-400 font-normal'> {otherDetails?.topic} </p>
-          </CardContent>
-        </Card>
-        
-
-        <Card>
-          <CardContent>
-            <p className='text-gray-400 font-normal flex gap-3 items-center'> <b className='text-base leading-snug font-medium text-white'> Started at </b> {otherDetails?.startedAtDate} {otherDetails?.startedAtTime} </p>
-            <p className='text-gray-400 font-normal flex gap-3 items-center'> <b className='text-base leading-snug font-medium text-white'> Time taken </b> {otherDetails?.timeTaken} minutes. </p>
-          </CardContent>
-        </Card>
+          <Card>
+            <CardContent>
+              <p className='text-gray-400 font-normal flex gap-3 items-center'> <b className='text-base leading-snug font-medium text-white'> Started at </b> {otherDetails?.startedAtDate} {otherDetails?.startedAtTime} </p>
+              <p className='text-gray-400 font-normal flex gap-3 items-center'> <b className='text-base leading-snug font-medium text-white'> Time taken </b> {otherDetails?.timeTaken} minutes. </p>
+            </CardContent>
+          </Card>
+        </div>
 
       </section>
 
@@ -178,6 +184,8 @@ export const ReviewQuestions: React.FC = () => {
                     </FieldLabel>
                   </RadioGroup>
                   <p className='p-2'> Explanation: {curElem.explaination} </p>
+                  {curElem.isUserAnsweredCorrect != true && <Button className='py-1 w-fit h-max self-end' onClick={() => setSelectedWrongQuestionId(curElem._id)}> <Brain />  Ask AI </Button>}
+
                 </Card>
               )
             })}
@@ -288,7 +296,10 @@ export const ReviewQuestions: React.FC = () => {
                     </FieldLabel>
                   </RadioGroup>
                   <p className='p-2'> Explanation: {curElem.explaination} </p>
+                  {curElem.isUserAnsweredCorrect != true && <Button className='py-1 w-fit h-max self-end' onClick={() => setSelectedWrongQuestionId(curElem._id)}> <Brain />  Ask AI </Button>}
 
+
+                  
                 </Card>
               )
             })}
@@ -343,13 +354,14 @@ export const ReviewQuestions: React.FC = () => {
                     </FieldLabel>
                   </RadioGroup>
                   <p className='p-2'> Explanation: {curElem.explaination} </p>
+                  {curElem.isUserAnsweredCorrect != true && <Button className='py-1 w-fit h-max self-end' onClick={() => setSelectedWrongQuestionId(curElem._id)}> <Brain />  Ask AI </Button>}
 
                 </Card>
               )
             })}
           </div>
         </TabsContent>
-
+        {selectedWrongQuestionId != null && <MessagePattern setSelectedWrongQuestionId={setSelectedWrongQuestionId} selectedWrongQuestionId={selectedWrongQuestionId} examId={params.examId} />}
 
       </Tabs>
     </main>
