@@ -301,9 +301,9 @@ export const Challenges: React.FC = () => {
                   </Button>
                 </div>
                 <div className='flex gap-2'>
-                  <Badge variant="default" > JavaScript</Badge>
-                  <Badge variant="secondary"> Core Concepts </Badge>
-                  <Badge variant="outline"> Arrays & Objects </Badge>
+                  <Badge variant="default" > {curChallenge.board} </Badge>
+                  <Badge variant="secondary"> {curChallenge.subject} </Badge>
+                  <Badge variant="outline"> {curChallenge.topic} </Badge>
                 </div>
               </CardFooter>
 

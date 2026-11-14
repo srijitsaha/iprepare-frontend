@@ -191,15 +191,15 @@ export const QuizResultView: React.FC<any> = ({
                 </svg>
                 <div className="absolute inset-0 flex items-center justify-center flex-col">
                   <span className="text-white text-lg font-black leading-none">
-                    {data?.accuracy}%
+                    {(data?.score * 10)}
                   </span>
                   <span className="text-[#c4c7c8] text-[8px] uppercase font-bold mt-0.5">
-                    Rank {data?.rank}
+                    Points
                   </span>
                 </div>
               </div>
               <p className="text-[#e5e1e4] text-[10px] font-medium">
-                Top {data?.topPercentile}% this week
+                {(data?.score * 10)} Points increased for this exam
               </p>
             </div>
 
